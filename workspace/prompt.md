@@ -1,39 +1,70 @@
-Create a Next.js React component called AboutSection.
+The structure must be:
 
-Design:
-- Dark background (#1a1a1a)
-- Left side: large serif typography
-- Right side: image
-- Very minimal luxury layout
-- Editorial style spacing
+<div className="badge">
+   rotating SVG text
+   centered PC icon (not rotating)
+</div>
 
-Layout:
-Top left: small logo.svg
+Replace Your CircularBadge With This (Safe Version)
 
-Below logo:
-Place loom.svg small icon
+Use this full component:
 
-Main text:
-"We craft custom business solutions that help you drive change."
+export default function CircularBadge() {
+  return (
+    <div className="relative w-[140px] h-[140px]">
 
-Typography style:
-- Serif font
-- The word "custom" should be italic
-- Large elegant typography
-- Multi-line text block
-- Very spacious line height
+      {/* Rotating Circular Text */}
+      <svg
+        viewBox="0 0 200 200"
+        className="w-full h-full animate-spin-slow"
+      >
+        <defs>
+          <path
+            id="circlePath"
+            d="
+              M 100, 100
+              m -55, 0
+              a 55,55 0 1,1 110,0
+              a 55,55 0 1,1 -110,0
+            "
+          />
+        </defs>
 
-Right side:
-Place an image (use placeholder for now)
-Image should be large and vertically centered
+        <text
+          fontSize="14"
+          letterSpacing="2"
+          fill="black"
+        >
+          <textPath href="#circlePath">
+            Get in touch * Get in touch * Get in touch *
+          </textPath>
+        </text>
+      </svg>
 
-Bottom right under image:
-Small paragraph text:
-"Everything we create is built in close collaboration with our clients and agency partners, working together to bring ideas to life with clarity and intention."
+      {/* Center PC Icon (DOES NOT ROTATE) */}
+      <img
+        src="/hero/SVG/pc.svg"
+        alt="pc"
+        className="absolute w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      />
+    </div>
+  );
+}
 
-Technical:
-- Use Tailwind
-- Use grid layout (2 columns)
-- Vertically center content
-- Maintain lots of negative space
-- Export default AboutSection
+Fix Animation in globals.css
+
+Make sure this exists in globals.css:
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+  transform-origin: center;
+}

@@ -1,67 +1,50 @@
-import Image from "next/image";
+import CircularBadge from "@/components/CircularBadge";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen bg-[#f5f5f5] overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative w-full h-[100svh] bg-[#f5f5f5] overflow-hidden flex flex-col items-center justify-center">
 
-      {/* Top right — badge placeholder */}
-      <div className="absolute top-6 right-6 w-20 h-20 rounded-full border border-[#171717]/30 flex items-center justify-center">
-        <span className="text-[10px] tracking-widest text-[#171717]/50 uppercase">Badge</span>
+      {/* Top Right — Circular Badge */}
+      <div className="absolute top-4 right-4 md:top-10 md:right-12 scale-75 md:scale-100 origin-top-right">
+        <CircularBadge />
       </div>
 
       {/* Hero text */}
-      <div className="text-center leading-none select-none">
-        {/* Line 1: Crafting + loom.svg + bold */}
-        <div className="flex items-center justify-center gap-4">
-          <span className="font-serif text-[clamp(3rem,8vw,8rem)] font-light tracking-tight text-[#171717]">
-            Crafting
-          </span>
-          <Image
-            src="/hero/loom.svg"
-            alt="loom"
-            width={64}
-            height={64}
-            className="w-[clamp(2rem,4vw,4rem)] h-auto"
-          />
-          <span className="font-serif text-[clamp(3rem,8vw,8rem)] font-light tracking-tight text-[#171717]">
-            bold
-          </span>
-        </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-[1.05] text-[#171717] w-full px-6">
 
-        {/* Line 2: design */}
-        <div>
-          <span className="font-serif text-[clamp(3rem,8vw,8rem)] font-light tracking-tight text-[#171717]">
-            design
+        <h1 className="text-[clamp(2rem,9vw,110px)] font-serif font-light">
+          Crafting
+          <span className="inline-block mx-[0.15em] align-middle -translate-y-1 md:-translate-y-6">
+            <img src="/hero/loom.svg" className="w-[clamp(2rem,8vw,10rem)] inline-block" />
           </span>
-        </div>
+          bold
+        </h1>
 
-        {/* Line 3: experiences — italic, slightly larger */}
-        <div>
-          <span className="font-serif italic text-[clamp(3.5rem,9vw,9.5rem)] font-light tracking-tight text-[#171717]">
-            experiences
-          </span>
-        </div>
+        <h1 className="text-[clamp(2.25rem,10vw,120px)] italic font-serif font-light mt-1 md:mt-2">
+          design experiences
+        </h1>
+
       </div>
 
-      {/* Bottom center — logo */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <Image src="/hero/logo.svg" alt="Brandloom" width={140} height={32} className="h-8 w-auto" />
+      {/* Bottom Center Logo */}
+      <div className="absolute bottom-16 md:bottom-28 left-1/2 -translate-x-1/2 opacity-90">
+        <img src="/hero/logo.svg" alt="Brandloom logo" className="w-32 md:w-56" />
       </div>
 
-      {/* Bottom left — socials */}
-      <span className="absolute bottom-8 left-8 text-[11px] tracking-[0.2em] uppercase text-[#171717]/50">
-        socials
-      </span>
+      {/* Bottom Left */}
+      <div className="absolute bottom-6 md:bottom-8 left-6 md:left-10 text-[9px] md:text-[10px] tracking-[0.3em] text-gray-500">
+        SOCIALS
+      </div>
 
-      {/* Bottom center-ish — clients (offset left of logo) */}
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 mt-10 text-[11px] tracking-[0.2em] uppercase text-[#171717]/50 translate-y-6">
-        clients
-      </span>
+      {/* Bottom Center */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 text-[9px] md:text-[10px] tracking-[0.3em] text-gray-500">
+        CLIENTS
+      </div>
 
-      {/* Bottom right — email */}
-      <span className="absolute bottom-8 right-8 text-[11px] tracking-[0.2em] uppercase text-[#171717]/50">
-        email
-      </span>
+      {/* Bottom Right */}
+      <div className="absolute bottom-6 md:bottom-8 right-6 md:right-10 text-[9px] md:text-[10px] tracking-[0.3em] text-gray-500">
+        EMAIL
+      </div>
 
     </section>
   );

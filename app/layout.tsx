@@ -34,6 +34,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500&display=swap" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
