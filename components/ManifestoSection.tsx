@@ -2,36 +2,33 @@ import Image from "next/image";
 
 export default function ManifestoSection() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f5f5f5] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full min-h-screen bg-[#f5f5f5] overflow-hidden">
 
-      {/* Top-left — Logo + decorative icon */}
-      <div className="absolute top-8 left-8 md:top-12 md:left-16 flex flex-col gap-4">
-        <Image src="/hero/logo.svg" alt="Brandloom" width={120} height={28} className="h-6 w-auto" />
-        {/* Decorative icon */}
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="opacity-30">
-          <circle cx="10" cy="10" r="9" stroke="#171717" strokeWidth="1" />
-          <line x1="10" y1="1" x2="10" y2="19" stroke="#171717" strokeWidth="1" />
-          <line x1="1" y1="10" x2="19" y2="10" stroke="#171717" strokeWidth="1" />
-        </svg>
+      {/* Halftone texture overlay */}
+      <div className="absolute inset-0 pointer-events-none">
+        <Image src="/textures/halftone.webp" alt="" fill className="object-cover opacity-[0.04]" />
       </div>
 
-      {/* Center — Manifesto text */}
-      <div className="max-w-3xl px-8 text-center">
-        <p className="font-serif text-[clamp(1.5rem,3vw,2.5rem)] font-light leading-[1.5] tracking-tight text-[#171717]">
-          We believe a brand is not a logo, a palette, or a typeface.
-          It is the <em className="not-italic italic">feeling</em> that lingers
-          after the screen goes dark — the quiet confidence of a name
-          spoken in the right room, at the right moment.
-          We build that feeling, deliberately.
+      {/* Top-left — Logo */}
+      <div className="absolute top-12 left-16">
+        <Image src="/hero/logo.svg" alt="Brandloom" width={120} height={28} className="h-6 w-auto" />
+      </div>
+
+      {/* Wand icon — just below logo */}
+      <div className="absolute top-24 left-16 lg:left-20">
+        <Image src="/manifest_section/SVG/wand.svg" alt="" width={20} height={20} className="w-16 lg:w-24 h-auto opacity-[0.84]" />
+      </div>
+
+      {/* Paragraph — horizontally centered, slightly above vertical center */}
+      <div className="absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl lg:max-w-4xl px-8 text-center">
+        <p className="font-serif text-xl lg:text-2xl font-light leading-[2.1] tracking-[0.02em] text-[#171717]">
+          At Brandloom, we believe great brands aren't built on marketing alone — they're built on clarity, consistency, and meaningful experiences. Working across industries and audiences has taught us that growth isn't about doing more, it's about doing the <em className="not-italic italic">right things</em> in the right order. When strategy, design, and communication come together with purpose, brands don't just compete — they become memorable.
         </p>
       </div>
 
-      {/* Bottom-right — Arrow */}
-      <div className="absolute bottom-8 right-8 md:bottom-12 md:right-16">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" className="opacity-40">
-          <line x1="4" y1="28" x2="28" y2="4" stroke="#171717" strokeWidth="1.5" />
-          <polyline points="14,4 28,4 28,18" stroke="#171717" strokeWidth="1.5" fill="none" />
-        </svg>
+      {/* Paper plane — bottom-right, pulled in closer to text */}
+      <div className="absolute bottom-[18%] right-[12%] lg:right-[16%]">
+        <Image src="/manifest_section/SVG/paper_plane.svg" alt="" width={28} height={28} className="w-24 lg:w-36 h-auto opacity-[0.96]" />
       </div>
 
     </section>

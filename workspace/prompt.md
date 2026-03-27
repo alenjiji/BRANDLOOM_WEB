@@ -1,8 +1,28 @@
-Adjust ManifestoSection spacing and layout:
+Update ManifestoSection layout for better desktop proportions.
 
-- Logo should be top-left with margin
-- Decorative icon should be below the logo
-- Main paragraph should be vertically centered on the page
-- Arrow icon should be bottom-right
-- Maintain lots of whitespace
-- The section should feel calm and spacious
+Changes required:
+
+1. Increase text container width on desktop only
+   - Mobile: keep current width
+   - Desktop: make text wider like editorial layout
+   - Use:
+     max-w-2xl on mobile
+     lg:max-w-4xl on desktop
+
+2. Increase font size slightly on desktop
+   - Mobile: text-xl
+   - Desktop: lg:text-2xl
+
+3. Increase wand and paper plane SVG sizes on desktop
+   - Wand:
+     mobile: w-10
+     desktop: lg:w-16
+   - Paper plane:
+     mobile: w-16
+     desktop: lg:w-24
+
+4. Adjust positions slightly for larger desktop layout:
+   - Wand: move slightly more inward from left
+   - Paper plane: move slightly more inward from right
+
+5. Keep everything centered and maintain lots of whitespace.
