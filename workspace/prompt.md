@@ -1,70 +1,53 @@
-The structure must be:
+Refactor FooterSection layout height and spacing.
 
-<div className="badge">
-   rotating SVG text
-   centered PC icon (not rotating)
-</div>
+The footer should NOT be full screen height.
 
-Replace Your CircularBadge With This (Safe Version)
+Layout rules:
+- Remove min-h-screen
+- Use large vertical padding instead (py-32 or py-40)
+- The footer should look like a short editorial footer, not a full page
+- The heading should still be large and prominent
+- Maintain lots of whitespace but reduce empty vertical space
+- Keep logo at top-left
+- Keep heading centered
+- Keep bottom row aligned to page margins
 
-Use this full component:
+Use a container:
+- max-w-7xl
+- mx-auto
+- px-16
+- py-32
 
-export default function CircularBadge() {
-  return (
-    <div className="relative w-[140px] h-[140px]">
 
-      {/* Rotating Circular Text */}
-      <svg
-        viewBox="0 0 200 200"
-        className="w-full h-full animate-spin-slow"
-      >
-        <defs>
-          <path
-            id="circlePath"
-            d="
-              M 100, 100
-              m -55, 0
-              a 55,55 0 1,1 110,0
-              a 55,55 0 1,1 -110,0
-            "
-          />
-        </defs>
+CORRECT FOOTER STRUCTURE: 
+<section className="bg-[#f5f5f5] w-full">
+  <div className="max-w-7xl mx-auto px-16 py-32 relative">
 
-        <text
-          fontSize="14"
-          letterSpacing="2"
-          fill="black"
-        >
-          <textPath href="#circlePath">
-            Get in touch * Get in touch * Get in touch *
-          </textPath>
-        </text>
-      </svg>
+    {/* Logo */}
+    <img src="/hero/logo.svg" className="mb-16" />
 
-      {/* Center PC Icon (DOES NOT ROTATE) */}
-      <img
-        src="/hero/SVG/pc.svg"
-        alt="pc"
-        className="absolute w-16 h-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      />
+    {/* Center Content */}
+    <div className="text-center mb-24">
+      <img src="/footer/SVG/chat bubble.svg" className="mx-auto mb-6 w-10" />
+
+      <h2 className="text-7xl font-serif inline-flex items-center gap-6">
+        Let’s work together
+        <img src="/footer/SVG/arrow footer.svg" className="w-12" />
+      </h2>
+
+      <img src="/footer/SVG/line_footer.svg" className="mx-auto mt-6" />
     </div>
-  );
-}
 
-Fix Animation in globals.css
+    {/* Bottom Row */}
+    <div className="flex justify-between text-sm tracking-[0.3em] text-gray-600">
+      <p>LOREM IPSUM</p>
+      <p>KALAMASSERY, KOCHI</p>
+      <div className="flex items-center gap-4">
+        <span>SOCIALS</span>
+        <img src="/footer/SVG/linkedin.svg" className="w-4" />
+        <img src="/footer/SVG/instagram.svg" className="w-4" />
+      </div>
+    </div>
 
-Make sure this exists in globals.css:
-
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spinSlow 28s linear infinite;
-  transform-origin: center;
-}
+  </div>
+</section>
