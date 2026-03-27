@@ -1,28 +1,25 @@
-Update ManifestoSection layout for better desktop proportions.
+Update the AsciiBackground visual style to use darker green shades and smaller letters for more detail and a subtle editorial look.
 
-Changes required:
+Make the following changes:
 
-1. Increase text container width on desktop only
-   - Mobile: keep current width
-   - Desktop: make text wider like editorial layout
-   - Use:
-     max-w-2xl on mobile
-     lg:max-w-4xl on desktop
+1. Reduce font size:
+   ctx.font = "7px monospace"
 
-2. Increase font size slightly on desktop
-   - Mobile: text-xl
-   - Desktop: lg:text-2xl
+2. Reduce grid size slightly for more detail:
+   GRID = 7
 
-3. Increase wand and paper plane SVG sizes on desktop
-   - Wand:
-     mobile: w-10
-     desktop: lg:w-16
-   - Paper plane:
-     mobile: w-16
-     desktop: lg:w-24
+3. Use darker green color palette based on brightness:
 
-4. Adjust positions slightly for larger desktop layout:
-   - Wand: move slightly more inward from left
-   - Paper plane: move slightly more inward from right
+   brightness > 220 → "#a7f3d0"
+   brightness > 180 → "#34d399"
+   brightness > 140 → "#059669"
+   brightness > 100 → "#047857"
+   brightness > 70  → "#065f46"
+   brightness > 40  → "#064e3b"
+   else → "#001a14"
 
-5. Keep everything centered and maintain lots of whitespace.
+4. Adjust opacity for light background:
+   opacity = 0.35 + Math.pow(brightness / 255, 1.5) * 0.45
+
+Goal:
+The image should be formed using very small dark green letters on a light background, creating a subtle but clearly visible image when viewed from a distance.

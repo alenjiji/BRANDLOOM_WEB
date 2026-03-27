@@ -15,7 +15,7 @@ export default function AboutSection() {
 
         {/* Left — text block */}
         <div className="max-w-full md:max-w-xl space-y-6 md:space-y-8 text-center md:text-left pt-16 md:pt-0">
-          <Image src="/hero/loom.svg" alt="loom" width={32} height={32} className="h-7 w-7 md:h-8 md:w-8 invert opacity-60 mx-auto md:mx-0" />
+          <Image src="/hero/loom.svg" alt="loom" width={32} height={32} className="h-12 w-12 md:h-16 md:w-16 invert opacity-60 mx-auto md:mx-0" />
 
           <p className="font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-[1.2] md:leading-[1.3] tracking-tight text-white max-w-sm mx-auto md:mx-0 md:max-w-xl">
             We craft{" "}

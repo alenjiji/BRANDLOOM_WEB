@@ -65,6 +65,18 @@ body {
   text-transform: uppercase;
 }
 
+.hero-serif {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.hero-script {
+  font-family: "Edwardian Script ITC", "Palatino Linotype", cursive;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
 @keyframes spinSlow {
   from {
     transform: rotate(0deg);
@@ -86,4 +98,22 @@ body {
 
 .animate-float {
   animation: float 7s ease-in-out infinite;
+}
+
+/* Desktop only — custom cursor */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 28px;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-2px, -2px);
+  }
 }

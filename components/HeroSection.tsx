@@ -1,8 +1,11 @@
 import CircularBadge from "@/components/CircularBadge";
+import AsciiBackground from "@/components/AsciiBackground";
 
 export default function HeroSection() {
   return (
     <section className="relative w-full h-[100svh] bg-[#f5f5f5] overflow-hidden flex flex-col items-center justify-center">
+
+      <AsciiBackground image="/ascii/closeup.png" />
 
       {/* Top Right — Circular Badge */}
       <div className="absolute top-4 right-4 md:top-10 md:right-12 scale-75 md:scale-100 origin-top-right">
@@ -10,18 +13,18 @@ export default function HeroSection() {
       </div>
 
       {/* Hero text */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-[1.05] text-[#171717] w-full px-6">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4 text-center text-[#171717]" style={{ lineHeight: 0.9 }}>
 
-        <h1 className="text-[clamp(2rem,9vw,110px)] font-serif font-light">
+        <h1 className="hero-serif whitespace-nowrap text-[clamp(2rem,8vw,6rem)]">
           Crafting
-          <span className="inline-block mx-[0.15em] align-middle -translate-y-1 md:-translate-y-6">
-            <img src="/hero/loom.svg" className="w-[clamp(2rem,8vw,10rem)] inline-block animate-float" />
+          <span className="inline-block align-baseline mx-[1vw]">
+            <img src="/hero/loom.svg" className="w-[clamp(1.5rem,6vw,4.5rem)] inline-block animate-float" />
           </span>
           bold
         </h1>
 
-        <h1 className="text-[clamp(2.25rem,10vw,120px)] italic font-serif font-light mt-1 md:mt-2">
-          design experiences
+        <h1 className="whitespace-nowrap text-[clamp(2rem,8vw,6rem)]">
+          <span className="hero-serif">design </span><span className="hero-script text-[clamp(2.25rem,9vw,6.75rem)]">experiences</span>
         </h1>
 
       </div>

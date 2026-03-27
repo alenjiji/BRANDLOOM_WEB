@@ -1,3 +1,4 @@
+import CustomCursor from "@/components/CustomCursor";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -38,18 +39,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500&display=swap" />
       </head>
       <body className="min-h-full flex flex-col">
+        <CustomCursor />
         {children}
-        <div
-          aria-hidden="true"
-          style={{
-            backgroundImage: "url('/textures/halftone.webp')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "200px",
-            opacity: 0.06,
-            pointerEvents: "none",
-          }}
-          className="fixed inset-0 z-[9999]"
-        />
       </body>
     </html>
   );

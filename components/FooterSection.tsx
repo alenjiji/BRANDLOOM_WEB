@@ -20,7 +20,7 @@ export default function FooterSection() {
 
         {/* Bottom Row */}
         <div className="flex flex-col md:flex-row md:justify-between items-center gap-4 md:gap-0 text-[10px] md:text-sm tracking-[0.3em] text-gray-500">
-          <p>LOREM IPSUM</p>
+          <p>EMAIL</p>
           <p>KALAMASSERY, KOCHI</p>
           <div className="flex items-center gap-4">
             <span>SOCIALS</span>
