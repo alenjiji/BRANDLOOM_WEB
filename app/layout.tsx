@@ -37,7 +37,20 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@500&display=swap" />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <div
+          aria-hidden="true"
+          style={{
+            backgroundImage: "url('/textures/halftone.webp')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "200px",
+            opacity: 0.06,
+            pointerEvents: "none",
+          }}
+          className="fixed inset-0 z-[9999]"
+        />
+      </body>
     </html>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ParallaxImage from "@/components/ParallaxImage";
 
 export default function AboutSection() {
   return (
@@ -26,12 +27,7 @@ export default function AboutSection() {
         {/* Right — image + caption */}
         <div className="flex flex-col items-center md:items-start justify-center mt-8 md:mt-0">
           <div className="relative w-full md:w-[380px] lg:w-[480px] h-[320px] md:h-[460px] lg:h-[560px] overflow-hidden mb-5 px-4 md:px-0">
-            <Image
-              src="/section_2/1x/image_section_2.webp"
-              alt="About BrandLoom"
-              fill
-              className="object-cover"
-            />
+            <ParallaxImage />
           </div>
 
           <p className="text-xs md:text-sm text-gray-400 w-full md:w-[380px] lg:w-[480px] leading-relaxed tracking-wide text-center md:text-left px-4 md:px-0">

@@ -15,7 +15,7 @@ export default function HeroSection() {
         <h1 className="text-[clamp(2rem,9vw,110px)] font-serif font-light">
           Crafting
           <span className="inline-block mx-[0.15em] align-middle -translate-y-1 md:-translate-y-6">
-            <img src="/hero/loom.svg" className="w-[clamp(2rem,8vw,10rem)] inline-block" />
+            <img src="/hero/loom.svg" className="w-[clamp(2rem,8vw,10rem)] inline-block animate-float" />
           </span>
           bold
         </h1>
