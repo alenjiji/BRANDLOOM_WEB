@@ -7,12 +7,22 @@ export default function FadeIn({ children }: { children: React.ReactNode }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const show = () => setVisible(true);
+
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.1 }
+      ([entry]) => { if (entry.isIntersecting) show(); },
+      { threshold: 0 }
     );
+
     if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+
+    // Fallback: ensure visibility even if IntersectionObserver doesn't fire
+    const timer = setTimeout(show, 300);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
